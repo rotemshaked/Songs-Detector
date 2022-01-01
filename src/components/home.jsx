@@ -1,8 +1,8 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 import "../assets/styles.css";
-import Song from "./songLyrics";
+// import Song from "./songLyrics";
 
 const Home = () => {
   let [songName, setSongName] = useState("hello world");
