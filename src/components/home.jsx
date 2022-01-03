@@ -10,7 +10,7 @@ const Home = () => {
         <div className="formContainer">
           <h1>Search Lyrics</h1>
           <form>
-            <input type="text" placeholder=" 🎵 ❣💦🕳It's Alright 🎵"></input>
+            <input type="text" placeholder=" serach song"></input>
             <button className="mic Button">mic🎙</button>
             <button className="search Button">Search</button>
           </form>
