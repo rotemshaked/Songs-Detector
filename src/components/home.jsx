@@ -1,8 +1,8 @@
 import React from "react";
-import { useState } from "react";
+// import { useState } from "react";
 
 const Home = () => {
-  const [lyrics, setLyrics] = useState("");
+  // const [lyrics, setLyrics] = useState("");
 
   return (
     <div className="homePageBody">
