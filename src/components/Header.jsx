@@ -12,7 +12,7 @@ const Header = () => {
         Page 2
       </Link>
       <Link className="link" to="/Page3">
-        Page 3
+        Favourites
       </Link>
     </div>
   );
