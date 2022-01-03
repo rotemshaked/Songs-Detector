@@ -3,3 +3,31 @@
   height: 100vh;
   background-color: bisque;
 }
+.navbar {
+  display: flex;
+  background-color: #808080;
+  color: #ffffff;
+  min-height: 5vh;
+}
+.link {
+  font-size: 24px;
+  color: #ffffff;
+  margin: 15px;
+}
+.homePageDiv {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.homePage {
+  font-size: 30px;
+  font-weight: 900;
+}
+.titles {
+  display: flex;
+  margin: 10px;
+}
+
+.container {
+  margin-top: 100px;
+}
