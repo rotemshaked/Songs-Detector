@@ -64,6 +64,8 @@
   border-radius: 5vw;
   border: none;
   text-indent: 48%;
+  font-size: 2vh;
+  font-weight: 700;
 }
 .formContainer input:focus {
   outline: none;
@@ -85,19 +87,46 @@ Button:hover {
 }
 .mic {
   margin-left: 0.2%;
-  width: 50px;
+  font-size: 3vh;
 }
 .search {
   margin-left: 91.8%;
+  font-size: 2vh;
 }
 .listOfOptions {
-  border: yellow 2px solid;
-  /* margin-top: 1%; */
-  height: 80vh;
+  /* border: yellow 2px solid; */
+  position: absolute;
+  margin-left: 26%;
+  margin-top: 28%;
+  width: 50%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
 }
 .listOfOptions li {
-  margin-left: 27%;
   margin-top: 1%;
+  display: flex;
+  margin-bottom: 20px;
+  position: relative;
+  /* justify-content: space-evenly; */
+  float: left;
+  width: 50%;
+}
+
+.getLyrics {
+  float: right;
+
+  /* margin-left: 1.5vw;
+  float: right;
+  background-color: rgba(255, 0, 55, 0.924);
+  font-size: 1.3vh;
+  border-radius: 5vh;
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+  font-weight: 400;
+  padding: 0.75vh; */
 }
 
 /* .results {
@@ -152,18 +181,7 @@ Button:hover {
   float: left;
 }
 
-.song-list li span {
-  float: right;
-  background-color: #9e2092;
-  border: 0;
-  font-size: 12px;
-  border-radius: 10px;
-  color: #fff;
-  cursor: pointer;
-  font-weight: 400;
-  padding: 4px 10px;
-  text-transform: capitalize;
-}
+
 .btn {
   background-color: rgb(26, 170, 115);
   margin: 0 auto;

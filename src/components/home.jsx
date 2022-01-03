@@ -25,8 +25,10 @@ const Home = () => {
         <li key={song.id}>
           <div>
             <strong>{song.artist.name}</strong> -{song.title}
+            <a className="getLyrics" href="/">
+              Get Lyrics
+            </a>
           </div>
-          <span className="getLyrics">get lyrics</span>
         </li>
       );
     });
