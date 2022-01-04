@@ -1,43 +1,67 @@
-import axios from "axios";
 import React from "react";
-import { useState } from "react";
+import axios from "axios";
 import "../assets/styles.css";
+import { Link } from "react-router-dom";
 
-const Home = () => {
-  const [songData, setsongData] = useState("");
-  const [options, setoptions] = useState("");
-
+const Home = ({
+  songData,
+  setsongData,
+  options,
+  setOptions,
+  setSongId,
+  songId,
+  artistPicture,
+  setArtistPicture,
+  preview,
+  setPreview,
+  setcoverPicture,
+}) => {
   const handleChange = (e) => {
     setsongData(e.target.value);
   };
 
   async function getLyrics(e) {
     e.preventDefault();
-    axios.get(`https://api.lyrics.ovh/suggest/${songData}`).then((data) => {
-      setoptions(data.data.data);
-      console.log(options);
-    });
+    axios
+      .get(`https://api.lyrics.ovh/suggest/${songData}`)
+      .then((data) => {
+        setOptions(data.data.data);
+      })
+      .catch(() => {
+        alert("Couldn't find this song, try another!");
+      });
   }
+
+  const getSongId = (id) => {
+    setSongId(id);
+  };
 
   const listOfOptions = () => {
     return options.map((song) => {
+      let key = song.id;
       return (
-        <li key={song.id}>
+        <li key={key}>
           <div>
             <strong>{song.artist.name}</strong> -{song.title}
-            <a className="getLyrics" href="/">
-              Get Lyrics
-            </a>
+            <div
+              className="getLyrics"
+              onClick={() => {
+                getSongId(key);
+                setArtistPicture(song.artist.picture_medium);
+                setPreview(song.preview);
+                setcoverPicture(song.album.cover_big);
+                console.log(song.album.cover_xl);
+              }}
+            >
+              <Link className="getLyricsLink" to="/Page2">
+                Get Lyrics
+              </Link>
+            </div>
           </div>
         </li>
       );
     });
   };
-
-  /* //IF FAVORITE
-  // const addSong = () => {
-  //   setFavoriteSongs([...songs, { nameOfArtist: "", id: uuid() }]);
-  // }; */
 
   return (
     <div className="homePageBody">
