@@ -1,48 +1,42 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Music from "./MusicPlayer";
 import "../assets/styles.css";
-import Dictaphone from "./Dictaphone";
 
-const Favourites = ({
-  getInput,
-  setGetInput,
-  options,
-  setOptions,
-  songTitle,
-  setSongTitle,
-  artistName,
-  setArtistName,
-  songId,
-  setSongId,
-  artistPicture,
-  setArtistPicture,
-  preview,
-  setPreview,
-  coverPicture,
-  setcoverPicture,
-  lyrics,
-  setLyrics,
-}) => {
-  return (
-    <div className="favoriteSongsPage">
-      <div className="favoriteSong">
-        <div className="favoriteArtistName">
-          {localStorage.getItem("artistName")} -
-          <span className="favoritesongTitle">
-            {localStorage.getItem("songTitle")}
-          </span>
+const Favourites = () => {
+  const CardFavorite = () => {
+    let tempArrayOfSongs = localStorage.getItem("songs");
+    let arrayOfSongs = JSON.parse(tempArrayOfSongs);
+    // console.log(arrayOfSongs);
+    return arrayOfSongs.map((song) => {
+      return (
+        <div className="favoriteSongsPage">
+          <div className="favoriteSong">
+            <div className="favoriteArtistName">
+              {song.artistName} -
+              <span className="favoritesongTitle">{song.songTitle}</span>
+            </div>
+            <img
+              className="favoritesongTitleCoverPicture"
+              src={song.artistPicture}
+              alt="Album cover"
+            />
+            <Link className="favoriteGetLyricsLink" to="/Lyrics">
+              Get Lyrics
+            </Link>
+          </div>
         </div>
-        <img
-          className="favoritesongTitleCoverPicture"
-          src={localStorage.getItem("song")}
-          alt="Album cover"
-        />
-        <Link className="favoriteGetLyricsLink" to="/Lyrics">
-          Get Lyrics
-        </Link>
-      </div>
-    </div>
+      );
+    });
+  };
+  useEffect(() => {
+    // if (Object.keys(localStorage).length > 0) {
+    // }
+  }, []);
+  return (
+    <>
+      <CardFavorite />
+      <div>jkllkjjkl</div>
+    </>
   );
 };
 export default Favourites;

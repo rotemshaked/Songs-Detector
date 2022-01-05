@@ -29,27 +29,18 @@ const Home = ({
     setGetInput(e.target.value);
   };
 
-  async function getData(e) {
+  function getData(e) {
     e.preventDefault();
     axios.get(`https://api.lyrics.ovh/suggest/${getInput}`).then((data) => {
       let songs = data.data.data.slice(0, -6);
       setOptions(songs);
     });
   }
-
-  useEffect(() => {
-    if (options) {
-      getLyrics();
-    }
-  }, [songId]);
-
-  async function getLyrics() {
-    axios
-      .get(`https://api.lyrics.ovh/v1/${artistName}/${songTitle}`)
-      .then((data) => {
-        setLyrics(data.data.lyrics);
-      });
-  }
+  // useEffect(() => {
+  //   if (options) {
+  //     getLyrics();
+  //   }
+  // }, [songId]);
 
   const getSongId = (id) => {
     setSongId(id);

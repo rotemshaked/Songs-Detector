@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import Header from "./components/Header";
@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import Lyrics from "./components/Lyrics";
 import Favourites from "./components/Favourites";
 import Music from "./components/MusicPlayer";
+import axios from "axios";
 
 function App() {
   const [getInput, setGetInput] = useState("");
@@ -18,7 +19,18 @@ function App() {
   const [coverPicture, setcoverPicture] = useState("");
   const [lyrics, setLyrics] = useState("");
   const [localStorageArray, setLocalStorageArray] = useState([]);
-  // const [lyrics, setLyrics] = useState("");
+
+  useEffect(() => {
+    function getLyrics() {
+      axios
+        .get(`https://api.lyrics.ovh/v1/${artistName}/${songTitle}`)
+        .then((data) => {
+          setLyrics(data.data.lyrics);
+        });
+    }
+    getLyrics();
+  }, [artistName, songTitle]);
+
   return (
     <div>
       <BrowserRouter>
@@ -78,7 +90,10 @@ function App() {
               />
             }
           ></Route>
-          <Route path="/Favourites" element={<Favourites />}></Route>
+          <Route
+            path="/Favourites"
+            element={<Favourites localStorageArray={localStorageArray} />}
+          ></Route>
         </Routes>
       </BrowserRouter>
     </div>

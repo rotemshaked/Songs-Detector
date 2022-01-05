@@ -33,19 +33,10 @@ const Lyrics = ({
   };
 
   const moveToFavorite = () => {
+    // alert("Added To Favorites!");
     setLocalStorageArray((prevState) => [...prevState, song]);
     localStorage.setItem("songs", JSON.stringify(localStorageArray));
-    let arrayOfSongs = localStorage.getItem("songs");
   };
-
-  // <Favourites />;
-  // alert("This song got into your favorites list!");
-
-  // useEffect(() => {
-  //   if (localStorage) {
-  //     console.log("mati");
-  //   }
-  // });
 
   return (
     <div className="secondPageBody">
