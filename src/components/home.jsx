@@ -2,7 +2,8 @@ import React from "react";
 import axios from "axios";
 import "../assets/styles.css";
 import { Link } from "react-router-dom";
-import { useEffect } from "react/cjs/react.development";
+import { useEffect } from "react";
+import Dictaphone from "./Dictaphone";
 
 const Home = ({
   getInput,
@@ -30,14 +31,10 @@ const Home = ({
 
   async function getData(e) {
     e.preventDefault();
-    axios
-      .get(`https://api.lyrics.ovh/suggest/${getInput}`)
-      .then((data) => {
-        setOptions(data.data.data);
-      })
-      .catch(() => {
-        alert("Couldn't find this song, try another!");
-      });
+    axios.get(`https://api.lyrics.ovh/suggest/${getInput}`).then((data) => {
+      let songs = data.data.data.slice(0, -6);
+      setOptions(songs);
+    });
   }
 
   useEffect(() => {
@@ -51,9 +48,6 @@ const Home = ({
       .get(`https://api.lyrics.ovh/v1/${artistName}/${songTitle}`)
       .then((data) => {
         setLyrics(data.data.lyrics);
-      })
-      .catch(() => {
-        alert("Couldn't find this song, try another!");
       });
   }
 
@@ -88,7 +82,7 @@ const Home = ({
       );
     });
   };
-  console.log(preview);
+
   return (
     <div className="homePageBody">
       <div className="containerHome">
@@ -97,7 +91,7 @@ const Home = ({
           <form>
             <input
               type="text"
-              placeholder="serach song"
+              placeholder="Enter song name"
               onChange={handleChange}
               value={getInput}
             ></input>
@@ -109,6 +103,7 @@ const Home = ({
         </div>
         {options && <ul className="listOfOptions">{listOfOptions()}</ul>}
       </div>
+      <Dictaphone />
     </div>
   );
 };

@@ -4,7 +4,7 @@ import { useState } from "react";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Lyrics from "./components/Lyrics";
-import Page3 from "./components/Page-3";
+import Favourites from "./components/Favourites";
 import Music from "./components/MusicPlayer";
 
 function App() {
@@ -17,6 +17,7 @@ function App() {
   const [preview, setPreview] = useState("");
   const [coverPicture, setcoverPicture] = useState("");
   const [lyrics, setLyrics] = useState("");
+  const [localStorageArray, setLocalStorageArray] = useState([]);
   // const [lyrics, setLyrics] = useState("");
   return (
     <div>
@@ -45,6 +46,8 @@ function App() {
                 setSongTitle={setSongTitle}
                 lyrics={lyrics}
                 setLyrics={setLyrics}
+                localStorageArray={localStorageArray}
+                setLocalStorageArray={setLocalStorageArray}
               />
             }
           ></Route>
@@ -70,10 +73,12 @@ function App() {
                 setSongTitle={setSongTitle}
                 lyrics={lyrics}
                 setLyrics={setLyrics}
+                localStorageArray={localStorageArray}
+                setLocalStorageArray={setLocalStorageArray}
               />
             }
           ></Route>
-          <Route path="/favorites" element={<Page3 />}></Route>
+          <Route path="/Favourites" element={<Favourites />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

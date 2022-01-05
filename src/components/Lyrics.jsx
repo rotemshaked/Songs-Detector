@@ -1,6 +1,8 @@
 import React from "react";
+import { useEffect } from "react";
 import "../assets/styles.css";
 import Music from "./MusicPlayer";
+import Favourites from "./Favourites";
 
 const Lyrics = ({
   getInput,
@@ -21,25 +23,44 @@ const Lyrics = ({
   setcoverPicture,
   lyrics,
   setLyrics,
+  localStorageArray,
+  setLocalStorageArray,
 }) => {
+  const song = {
+    artistName: artistName,
+    songTitle: songTitle,
+    artistPicture: artistPicture,
+  };
+
+  const moveToFavorite = () => {
+    setLocalStorageArray((prevState) => [...prevState, song]);
+    localStorage.setItem("songs", JSON.stringify(localStorageArray));
+    let arrayOfSongs = localStorage.getItem("songs");
+  };
+
+  // <Favourites />;
+  // alert("This song got into your favorites list!");
+
+  // useEffect(() => {
+  //   if (localStorage) {
+  //     console.log("mati");
+  //   }
+  // });
+
   return (
     <div className="secondPageBody">
-      {/* <div>{console.log("input" + getInput)}</div>
-      <div>{console.log("options" + options)}</div>
-      <div>{console.log("title" + songTitle)}</div>
-      <div>{console.log("name" + artistName)}</div>
-      <div>{console.log("id" + songId)}</div>
-      <div>{console.log(artistPicture)}</div>
-      <div>{console.log(preview)}</div> */}
       <img className="artistPicture" src={artistPicture} alt="Album cover" />
-      {/* <div>{preview}</div> */}
       <div className="secondPageFrame">
         <div>
-          <strong>{artistName}</strong> <br></br>
-          <div className="secondPageSongTitle"> {songTitle}</div>
-          <div className="lyrics"> {lyrics}</div>
+          <div className="secondPageArtistName">
+            <strong>{artistName}</strong> - {songTitle}
+          </div>
         </div>
       </div>
+      <div className="lyrics">{lyrics}</div>
+      <button className="favorites" onClick={moveToFavorite}>
+        Add To Favorites 💗
+      </button>
       <img className="coverPicture" src={coverPicture} alt="Album cover" />
       <div className="secondPageMusic">
         <Music preview={preview} />

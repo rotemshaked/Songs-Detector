@@ -7,7 +7,7 @@ const Music = ({ preview }) => {
         url={preview}
         width="15vw"
         height="10vh"
-        playing={true}
+        playing={false}
         controls={true}
       />
     </div>
