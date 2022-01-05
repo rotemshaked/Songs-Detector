@@ -2,7 +2,6 @@ import React from "react";
 import axios from "axios";
 import "../assets/styles.css";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 import Dictaphone from "./Dictaphone";
 
 const Home = ({
@@ -10,11 +9,11 @@ const Home = ({
   setGetInput,
   options,
   setOptions,
-  songTitle,
+
   setSongTitle,
-  artistName,
+
   setArtistName,
-  songId,
+
   setSongId,
   artistPicture,
   setArtistPicture,

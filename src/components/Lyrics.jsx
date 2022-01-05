@@ -1,28 +1,14 @@
 import React from "react";
-import { useEffect } from "react";
 import "../assets/styles.css";
 import Music from "./MusicPlayer";
-import Favourites from "./Favourites";
 
 const Lyrics = ({
-  getInput,
-  setGetInput,
-  options,
-  setOptions,
   songTitle,
-  setSongTitle,
   artistName,
-  setArtistName,
-  songId,
-  setSongId,
   artistPicture,
-  setArtistPicture,
   preview,
-  setPreview,
   coverPicture,
-  setcoverPicture,
   lyrics,
-  setLyrics,
   localStorageArray,
   setLocalStorageArray,
 }) => {

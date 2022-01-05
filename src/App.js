@@ -5,7 +5,6 @@ import Header from "./components/Header";
 import Home from "./components/home";
 import Lyrics from "./components/Lyrics";
 import Favourites from "./components/Favourites";
-import Music from "./components/MusicPlayer";
 import axios from "axios";
 
 function App() {
