@@ -191,6 +191,11 @@ Button:hover {
 .music {
   position: absolute;
   height: 12vh;
-  margin-top: 85.5vh;
-  margin-left: 71.8vw;
+  margin-top: 80.5vh;
+  margin-left: 71vw;
+}
+.secondPageMusic {
+  position: absolute;
+  margin-left: 10%;
+  /* border: 3px solid red; */
 }

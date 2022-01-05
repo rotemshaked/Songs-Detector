@@ -47,7 +47,6 @@ const Home = ({
   }, [songId]);
 
   async function getLyrics() {
-    console.log(artistName, songTitle);
     axios
       .get(`https://api.lyrics.ovh/v1/${artistName}/${songTitle}`)
       .then((data) => {
@@ -78,7 +77,6 @@ const Home = ({
                 setcoverPicture(song.album.cover_big);
                 setSongTitle(song.title);
                 setArtistName(song.artist.name);
-                // console.log(song);
               }}
             >
               <Link className="getLyricsLink" to="/Lyrics">
@@ -90,7 +88,7 @@ const Home = ({
       );
     });
   };
-
+  console.log(preview);
   return (
     <div className="homePageBody">
       <div className="containerHome">

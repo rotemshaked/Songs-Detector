@@ -1,6 +1,6 @@
 import React from "react";
 import "../assets/styles.css";
-// import Music from "./MusicPlayer";
+import Music from "./MusicPlayer";
 
 const Lyrics = ({
   getInput,
@@ -41,7 +41,9 @@ const Lyrics = ({
         </div>
       </div>
       <img className="coverPicture" src={coverPicture} alt="Album cover" />
-      {/* <Music /> */}
+      <div className="secondPageMusic">
+        <Music preview={preview} />
+      </div>
     </div>
   );
 };

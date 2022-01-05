@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import Lyrics from "./components/Lyrics";
 import Page3 from "./components/Page-3";
+import Music from "./components/MusicPlayer";
 
 function App() {
   const [getInput, setGetInput] = useState("");
