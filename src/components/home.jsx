@@ -2,30 +2,56 @@ import React from "react";
 import axios from "axios";
 import "../assets/styles.css";
 import { Link } from "react-router-dom";
+import { useEffect } from "react/cjs/react.development";
 
 const Home = ({
-  songData,
-  setsongData,
+  getInput,
+  setGetInput,
   options,
   setOptions,
-  setSongId,
+  songTitle,
+  setSongTitle,
+  artistName,
+  setArtistName,
   songId,
+  setSongId,
   artistPicture,
   setArtistPicture,
   preview,
   setPreview,
+  coverPicture,
   setcoverPicture,
+  lyrics,
+  setLyrics,
 }) => {
   const handleChange = (e) => {
-    setsongData(e.target.value);
+    setGetInput(e.target.value);
   };
 
-  async function getLyrics(e) {
+  async function getData(e) {
     e.preventDefault();
     axios
-      .get(`https://api.lyrics.ovh/suggest/${songData}`)
+      .get(`https://api.lyrics.ovh/suggest/${getInput}`)
       .then((data) => {
         setOptions(data.data.data);
+      })
+      .catch(() => {
+        alert("Couldn't find this song, try another!");
+      });
+  }
+
+  useEffect(() => {
+    if (options) {
+      getLyrics();
+    }
+  }, [songId]);
+
+  async function getLyrics() {
+    console.log(artistName, songTitle);
+    axios
+      .get(`https://api.lyrics.ovh/v1/${artistName}/${songTitle}`)
+      .then((data) => {
+        setLyrics(data.data.lyrics);
       })
       .catch(() => {
         alert("Couldn't find this song, try another!");
@@ -44,16 +70,18 @@ const Home = ({
           <div>
             <strong>{song.artist.name}</strong> -{song.title}
             <div
-              className="getLyrics"
+              className="data"
               onClick={() => {
                 getSongId(key);
                 setArtistPicture(song.artist.picture_medium);
                 setPreview(song.preview);
                 setcoverPicture(song.album.cover_big);
-                console.log(song.album.cover_xl);
+                setSongTitle(song.title);
+                setArtistName(song.artist.name);
+                // console.log(song);
               }}
             >
-              <Link className="getLyricsLink" to="/Page2">
+              <Link className="getLyricsLink" to="/Lyrics">
                 Get Lyrics
               </Link>
             </div>
@@ -73,10 +101,10 @@ const Home = ({
               type="text"
               placeholder="serach song"
               onChange={handleChange}
-              value={songData}
+              value={getInput}
             ></input>
             <button className="mic Button">🎙</button>
-            <button className="search Button" onClick={getLyrics}>
+            <button className="search Button" onClick={getData}>
               🔍
             </button>
           </form>

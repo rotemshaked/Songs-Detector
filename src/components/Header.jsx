@@ -8,8 +8,8 @@ const Header = () => {
       <Link className="link" to="/">
         Home Page
       </Link>
-      <Link className="link" to="/Page2">
-        Page 2
+      <Link className="link" to="/Lyrics">
+        Lyrics
       </Link>
       <Link className="link" to="/Page3">
         Favourites

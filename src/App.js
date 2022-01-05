@@ -3,16 +3,19 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import Header from "./components/Header";
 import Home from "./components/Home";
-import Page2 from "./components/Page-2";
+import Lyrics from "./components/Lyrics";
 import Page3 from "./components/Page-3";
 
 function App() {
-  const [songData, setsongData] = useState("");
+  const [getInput, setGetInput] = useState("");
   const [options, setOptions] = useState("");
+  const [songTitle, setSongTitle] = useState("");
+  const [artistName, setArtistName] = useState("");
   const [songId, setSongId] = useState("");
   const [artistPicture, setArtistPicture] = useState("");
   const [preview, setPreview] = useState("");
   const [coverPicture, setcoverPicture] = useState("");
+  const [lyrics, setLyrics] = useState("");
   // const [lyrics, setLyrics] = useState("");
   return (
     <div>
@@ -23,8 +26,8 @@ function App() {
             path="/"
             element={
               <Home
-                songData={songData}
-                setsongData={setsongData}
+                getInput={getInput}
+                setGetInput={setGetInput}
                 options={options}
                 setOptions={setOptions}
                 songId={songId}
@@ -35,15 +38,21 @@ function App() {
                 setPreview={setPreview}
                 coverPicture={coverPicture}
                 setcoverPicture={setcoverPicture}
+                artistName={artistName}
+                setArtistName={setArtistName}
+                songTitle={songTitle}
+                setSongTitle={setSongTitle}
+                lyrics={lyrics}
+                setLyrics={setLyrics}
               />
             }
           ></Route>
           <Route
-            path="/Page2"
+            path="/Lyrics"
             element={
-              <Page2
-                songData={songData}
-                setsongData={setsongData}
+              <Lyrics
+                getInput={getInput}
+                setGetInput={setGetInput}
                 options={options}
                 setOptions={setOptions}
                 songId={songId}
@@ -54,12 +63,16 @@ function App() {
                 setPreview={setPreview}
                 coverPicture={coverPicture}
                 setcoverPicture={setcoverPicture}
-                // lyrics={lyrics}
-                // setLyrics={setLyrics}
+                artistName={artistName}
+                setArtistName={setArtistName}
+                songTitle={songTitle}
+                setSongTitle={setSongTitle}
+                lyrics={lyrics}
+                setLyrics={setLyrics}
               />
             }
           ></Route>
-          <Route path="/Page3" element={<Page3 />}></Route>
+          <Route path="/favorites" element={<Page3 />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
