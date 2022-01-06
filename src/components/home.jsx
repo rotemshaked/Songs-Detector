@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import "../assets/styles.css";
 import { Link } from "react-router-dom";
-import Dictaphone from "./Dictaphone";
+// import Dictaphone from "./Dictaphone";
 
 const Home = ({
   getInput,

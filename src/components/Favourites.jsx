@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import "../assets/styles.css";
 
-const Favourites = ({ setFilteredFavoriteList, filteredFavoriteList }) => {
-  const deleteSongFromFavoriteste = (e) => {
-    let tempArrayOfSongs = localStorage.getItem("songs");
-    let arrayOfSongs = JSON.parse(tempArrayOfSongs);
-    return arrayOfSongs.filter((song) => console.log(song, "e" + e.target));
-  };
+const Favourites = () => {
+  // const deleteSongFromFavoriteste = (e) => {
+  //   let tempArrayOfSongs = localStorage.getItem("songs");
+  //   let arrayOfSongs = JSON.parse(tempArrayOfSongs);
+  //   return arrayOfSongs.filter((song) => console.log(song, "e" + e.target));
+  // };
 
   const CardFavorite = () => {
     let tempArrayOfSongs = localStorage.getItem("songs");
