@@ -1,6 +1,11 @@
-https://elegant-cray-80d263.netlify.app
+Find lyrics to a song by entering artist name or song name,
+listen to a preview and keep your favorites songs!
 
 ![alt text](https://github.com/rotemshaked/Songs-Detector/blob/main/src/assets/Untitled.png)
+
+Nelify link:
+
+https://elegant-cray-80d263.netlify.app
 
 Languages:
 
