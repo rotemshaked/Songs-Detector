@@ -18,6 +18,7 @@ function App() {
   const [coverPicture, setcoverPicture] = useState("");
   const [lyrics, setLyrics] = useState("");
   const [localStorageArray, setLocalStorageArray] = useState([]);
+  const [filteredFavoriteList, setFilteredFavoriteList] = useState([]);
 
   useEffect(() => {
     function getLyrics() {
@@ -91,7 +92,13 @@ function App() {
           ></Route>
           <Route
             path="/Favourites"
-            element={<Favourites localStorageArray={localStorageArray} />}
+            element={
+              <Favourites
+                localStorageArray={localStorageArray}
+                filteredFavoriteList={filteredFavoriteList}
+                setFilteredFavoriteList={setFilteredFavoriteList}
+              />
+            }
           ></Route>
         </Routes>
       </BrowserRouter>

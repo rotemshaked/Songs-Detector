@@ -1,4 +1,8 @@
-![alt text](https://github.com/rotemshaked/Songs-Detector/blob/main/src/assets/Untitled.png)
+Finder
+
+https://elegant-cray-80d263.netlify.app
+
+![alt text](C:\Users\rotem\Desktop\boot camp\songs-detector\src\assets\img-2.png)
 
 Languages:
 
@@ -7,7 +11,7 @@ Languages:
 ✅ HTML
 ✅ CSS
 
-🎼🎧🎵🎷🎙🥁: Dependencies
+Dependencies:
 
 - axios
 - react-player
