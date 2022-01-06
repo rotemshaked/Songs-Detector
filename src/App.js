@@ -31,6 +31,10 @@ function App() {
     getLyrics();
   }, [artistName, songTitle]);
 
+  useEffect(() => {
+    localStorage.setItem("songs", JSON.stringify(localStorageArray));
+  }, [localStorageArray]);
+
   return (
     <div>
       <BrowserRouter>

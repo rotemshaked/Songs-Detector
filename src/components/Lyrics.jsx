@@ -5,9 +5,7 @@ import Music from "./MusicPlayer";
 const Lyrics = ({
   songTitle,
   artistName,
-
   artistPicture,
-
   preview,
   setPreview,
   coverPicture,
@@ -26,6 +24,7 @@ const Lyrics = ({
   const moveToFavorite = () => {
     // alert("Added To Favorites!");
     setLocalStorageArray((prevState) => [...prevState, song]);
+    console.log(localStorageArray);
     localStorage.setItem("songs", JSON.stringify(localStorageArray));
   };
 
