@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import Music from "./MusicPlayer";
 import "../assets/styles.css";
 
 const Favourites = () => {
   const CardFavorite = () => {
     let tempArrayOfSongs = localStorage.getItem("songs");
     let arrayOfSongs = JSON.parse(tempArrayOfSongs);
-    // console.log(arrayOfSongs);
     return arrayOfSongs.map((song) => {
       return (
         <div className="favoriteSongsPage">
@@ -20,6 +20,7 @@ const Favourites = () => {
               src={song.artistPicture}
               alt="Album cover"
             />
+            <div className="favoriteMusicPlayer">{/* <Music /> */}</div>
             <Link className="favoriteGetLyricsLink" to="/Lyrics">
               Get Lyrics
             </Link>
@@ -28,15 +29,7 @@ const Favourites = () => {
       );
     });
   };
-  useEffect(() => {
-    // if (Object.keys(localStorage).length > 0) {
-    // }
-  }, []);
-  return (
-    <>
-      <CardFavorite />
-      <div>jkllkjjkl</div>
-    </>
-  );
+
+  return <div className="favorites">{CardFavorite()}</div>;
 };
 export default Favourites;

@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import axios from "axios";
 import { useState } from "react";
 import Header from "./components/Header";
 import Home from "./components/home";
 import Lyrics from "./components/Lyrics";
 import Favourites from "./components/Favourites";
-import axios from "axios";
 
 function App() {
   const [getInput, setGetInput] = useState("");

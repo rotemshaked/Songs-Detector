@@ -13,7 +13,9 @@ const Home = ({
   setSongTitle,
 
   setArtistName,
-
+  artistName,
+  songTitle,
+  setLyrics,
   setSongId,
   artistPicture,
   setArtistPicture,
@@ -21,8 +23,6 @@ const Home = ({
   setPreview,
   coverPicture,
   setcoverPicture,
-  lyrics,
-  setLyrics,
 }) => {
   const handleChange = (e) => {
     setGetInput(e.target.value);
@@ -35,11 +35,6 @@ const Home = ({
       setOptions(songs);
     });
   }
-  // useEffect(() => {
-  //   if (options) {
-  //     getLyrics();
-  //   }
-  // }, [songId]);
 
   const getSongId = (id) => {
     setSongId(id);

@@ -153,23 +153,7 @@ Button:hover {
   width: 45%;
   height: 100%;
 }
-.secondPageFrame {
-  /* position: absolute;
-  margin-left: 45%;
-  background-color: rgba(255, 255, 255, 0.3);
-  border: 3px white solid;
-  width: 40vw;
-  height: 96vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 2.5vh;
-  z-index: 3;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold; */
-  /* text-shadow: 1px 1px 2px white; */
-}
+
 .secondPageArtistName {
   font-size: 3vh;
   width: 100%;
@@ -197,27 +181,23 @@ Button:hover {
 .secondPageMusic {
   position: absolute;
   margin-left: 10%;
-  /* border: 3px solid red; */
 }
-.favoriteSongsPage {
+.favorites {
   background-color: #272727;
-  font-family: Arial, Helvetica, sans-serif;
-  height: 96vh;
   width: 100vw;
-  color: white;
-  font-size: 3.5vh;
+  height: auto;
+  font-size: 3vh;
+  font-weight: 400;
+  color: #fff;
   display: flex;
-  /* position: relative; */
-  /* overflow: auto; */
+  justify-content: start;
+  flex-wrap: wrap;
 }
+
 .favoriteSong {
-  border: 2px red solid;
-  width: auto;
-  height: 40vh;
   background-color: rgba(255, 255, 255, 0.5);
   border: 3px white solid;
-  margin: 2vw;
-  /* display: flex; */
+  margin: 0.8vw;
 }
 
 .favoriteArtistName {
@@ -231,17 +211,6 @@ Button:hover {
   margin: 3vh;
 }
 
-.favorites {
-  font-size: 3vh;
-  font-weight: 400;
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 3px white solid;
-  color: #fff;
-  margin-left: 82.5%;
-  margin-top: 16%;
-  position: absolute;
-  cursor: pointer;
-}
 .favoriteGetLyricsLink {
   margin-top: 1vh;
   text-decoration: none;
@@ -251,7 +220,11 @@ Button:hover {
 .favoriteGetLyricsLink:hover {
   color: black;
 }
-
+.favoriteMusicPlayer {
+  /* width: 200px;
+  margin-bottom: 100%; */
+  border: 2px solid red;
+}
 @media screen and (max-width: 992px) {
 }
 
