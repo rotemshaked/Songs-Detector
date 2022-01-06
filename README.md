@@ -1,14 +1,13 @@
-![alt text](http://url/to/img.png)
 ![alt text](https://github.com/rotemshaked/Songs-Detector/blob/main/src/assets/Untitled.png)
 
-## :technologist: Languages
+Languages:
 
 ✅ React
 ✅ JavaScript
 ✅ HTML
 ✅ CSS
 
-## :package: Dependencies
+🎼🎧🎵🎷🎙🥁: Dependencies
 
 - axios
 - react-player

@@ -88,7 +88,7 @@ const Home = ({
         </div>
         {options && <ul className="listOfOptions">{listOfOptions()}</ul>}
       </div>
-      <Dictaphone />
+      {/* <Dictaphone /> */}
     </div>
   );
 };
