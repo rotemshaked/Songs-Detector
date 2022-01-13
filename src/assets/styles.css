@@ -61,6 +61,7 @@
   text-indent: 8%;
   font-size: 2vh;
   font-weight: 700;
+  position: relative;
 }
 .formContainer input:focus {
   outline: none;
@@ -262,6 +263,9 @@ Button:hover {
     width: 60%;
     margin-top: 2vh;
   }
+  .formContainer input {
+    text-indent: 15%;
+  }
   .Button {
     width: 13%;
     height: 100%;
@@ -287,7 +291,7 @@ Button:hover {
   .listOfOptions {
     position: absolute;
     margin-left: 21%;
-    margin-top: 60%;
+    margin-top: 26%;
     width: 80%;
     list-style: none;
     display: flex;
