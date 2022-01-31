@@ -85,8 +85,10 @@ const Home = ({
               🔍
             </button>
           </form>
+          <div className="listContainer">
+            {options && <ul className="listOfOptions">{listOfOptions()}</ul>}
+          </div>
         </div>
-        {options && <ul className="listOfOptions">{listOfOptions()}</ul>}
       </div>
       {/* <Dictaphone /> */}
     </div>
