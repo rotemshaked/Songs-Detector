@@ -28,12 +28,21 @@ const Home = ({
     setGetInput(e.target.value);
   };
 
-  function getData(e) {
+  async function getData(e) {
     e.preventDefault();
-    axios.get(`https://api.lyrics.ovh/suggest/${getInput}`).then((data) => {
-      let songs = data.data.data.slice(0, -6);
-      setOptions(songs);
+
+    const response = await fetch(`https://api.lyrics.ovh/suggest/${getInput}`, {
+      method: "GET",
+      headers: {
+        SameSite: "SameSite = None",
+      },
     });
+    const { data: songs } = await response.json();
+
+    // axios.get(`https://api.lyrics.ovh/suggest/${getInput}`).then((data) => {
+    //   let songs = data.data.data.slice(0, -6);
+    // });
+    setOptions(songs);
   }
 
   const getSongId = (id) => {

@@ -21,6 +21,7 @@ function App() {
   const [filteredFavoriteList, setFilteredFavoriteList] = useState([]);
 
   useEffect(() => {
+    if (!artistName || !songTitle) return;
     function getLyrics() {
       axios
         .get(`https://api.lyrics.ovh/v1/${artistName}/${songTitle}`)
