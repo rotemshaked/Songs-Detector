@@ -41,7 +41,7 @@ const Lyrics = ({
       <div className="secondPageCoverAndMusic">
         <img className="artistPicture" src={artistPicture} alt="Album cover" />
         <button className="favorites" onClick={moveToFavorite}>
-          Add To Favorites 💗
+          Add To Favorite 💗
         </button>
         <div className="secondPageMusic">
           {/* <Music preview={preview} /> */}
