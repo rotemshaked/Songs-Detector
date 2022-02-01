@@ -30,7 +30,6 @@ const Lyrics = ({
 
   return (
     <div className="secondPageBody">
-      <img className="artistPicture" src={artistPicture} alt="Album cover" />
       <div className="secondPageFrame">
         <div>
           <div className="secondPageArtistName">
@@ -38,13 +37,16 @@ const Lyrics = ({
           </div>
         </div>
       </div>
-      <div className="lyrics">{lyrics}</div>
-      <button className="favorites" onClick={moveToFavorite}>
-        Add To Favorites 💗
-      </button>
       <img className="coverPicture" src={coverPicture} alt="Album cover" />
-      <div className="secondPageMusic">
-        <Music preview={preview} />
+      <div className="lyrics">{lyrics}</div>
+      <div className="secondPageCoverAndMusic">
+        <img className="artistPicture" src={artistPicture} alt="Album cover" />
+        <button className="favorites" onClick={moveToFavorite}>
+          Add To Favorites 💗
+        </button>
+        <div className="secondPageMusic">
+          <Music preview={preview} />
+        </div>
       </div>
     </div>
   );
