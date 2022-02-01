@@ -82,12 +82,13 @@ const Home = ({
       <div className="containerHome">
         <div className="formContainer">
           <h1>Search Lyrics</h1>
-          <form>
+          <form onSubmit={getData}>
             <input
               type="text"
               placeholder="Enter song name"
               onChange={handleChange}
               value={getInput}
+              // onKeyPress={handleKeypress}
             ></input>
             <button className="mic Button">🎙</button>
             <button className="search Button" onClick={getData}>
