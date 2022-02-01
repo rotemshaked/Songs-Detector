@@ -239,7 +239,7 @@ Button:hover {
   }
   .formContainer form {
     width: 60%;
-    margin-top: 3vh;
+    margin-top: 5vh;
   }
   .formContainer input {
     text-indent: 15%;
@@ -303,14 +303,14 @@ Button:hover {
   .secondPageArtistName {
     font-size: 1.8vh;
     width: 25%;
-    margin-left: 50vw;
+    margin-left: 52vw;
   }
   .lyrics {
     width: 32vw;
     font-size: 1.8vh;
     margin-top: 8vh;
     line-height: 2.5vh;
-    margin-left: 50vw;
+    margin-left: 52vw;
   }
   .secondPageCoverAndMusic {
     width: 50vw;
