@@ -44,7 +44,7 @@ const Lyrics = ({
           Add To Favorites 💗
         </button>
         <div className="secondPageMusic">
-          <Music preview={preview} />
+          {/* <Music preview={preview} /> */}
         </div>
       </div>
     </div>
