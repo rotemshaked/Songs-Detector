@@ -22,7 +22,6 @@ const Lyrics = ({
   };
 
   const moveToFavorite = () => {
-    // alert("Added To Favorites!");
     setLocalStorageArray((prevState) => [...prevState, song]);
     console.log(localStorageArray);
     localStorage.setItem("songs", JSON.stringify(localStorageArray));
