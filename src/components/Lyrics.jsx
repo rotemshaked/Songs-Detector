@@ -6,12 +6,8 @@ const Lyrics = ({
   songTitle,
   artistName,
   artistPicture,
-  preview,
-  setPreview,
   coverPicture,
-  setcoverPicture,
   lyrics,
-  setLyrics,
   localStorageArray,
   setLocalStorageArray,
 }) => {
